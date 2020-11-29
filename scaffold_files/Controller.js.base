@@ -1,0 +1,25 @@
+const <entity>Service = require("../service/<entity>Service")
+exports.create<entity> = (req, res, err) => {
+    <entity>Service.create<entity>(req, res, err)
+}
+
+exports.get<entity>s = (req, res) => {
+    <entity>Service.get<entity>s()
+    .then((result) => {
+        res.send(result)
+    })    
+}
+
+exports.get<entity> = (req, res) => {
+    <entity>Service.get<entity>(req)
+    .then((result) => {
+        res.send(result)
+    })    
+}
+
+exports.delete<entity> = (req, res) => {
+    <entity>Service.delete<entity>(req)
+    .then(() => {
+        res.status(200).send("<entity> deleted successfully")
+    })    
+}

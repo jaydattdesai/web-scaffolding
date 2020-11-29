@@ -1,0 +1,33 @@
+const { body, validationResult } = require('express-validator');
+require("../config/dbconfig")
+
+sequelize.sync()
+
+exports.create<entity> = (request, res, err) => {    
+    <entity>.create({
+        <requestdata>
+    }).then(result => {
+        res.status(201).send(result)
+    });  
+                
+}
+
+exports.get<entity>s = () => {
+    return <entity>.findAll();
+}
+
+exports.get<entity> = (req) => {
+    return <entity>.findAll({
+        where: {
+            id: req.params.<entity>Id
+        }
+    });
+}
+
+exports.delete<entity> = (req) => {
+    return <entity>.destroy({
+        where: {
+            id: req.params.<entity>Id
+        }
+    });
+}

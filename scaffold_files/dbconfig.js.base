@@ -1,0 +1,7 @@
+const config = require("./db.config.js")
+var Sequelize = require('sequelize');
+global.sequelize = new Sequelize(config.DB, 'root', 'root', {
+    host: 'localhost',
+    dialect: 'mysql'
+  });
+  

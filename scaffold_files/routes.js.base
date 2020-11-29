@@ -1,0 +1,9 @@
+const <entity>Controller = require('./controller/<entity>Controller')
+const { body, validationResult } = require('express-validator');
+
+exports.routeConfig = app => {
+    app.post("/api/v1/<entity>s", <entity>Controller.create<entity>)
+    app.get("/api/v1/<entity>s", <entity>Controller.get<entity>s)
+    app.get("/api/v1/<entity>s/:<entity>Id", <entity>Controller.get<entity>)
+    app.delete("/api/v1/<entity>s/:<entity>Id", <entity>Controller.delete<entity>)
+}
